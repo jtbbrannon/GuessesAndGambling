@@ -1,0 +1,26 @@
+GandG Notes:
+
+CSS updates:
+	Buttons:
+	
+	Textbox:
+	
+	Screen look:
+	
+	Round Number should be displayed
+	
+Functionality:
+	Write guesses to screen
+	
+	Lower than all guesses
+		What is the payout? -payout is set to one about highest payout
+
+	New Round Button should not always show
+		Should it only show on "MVP" device
+	
+	Anwsers should only be Number fields
+	Anwser should be cleared
+	
+
+	
+	Max Rounds should be "7"
