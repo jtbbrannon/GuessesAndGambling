@@ -1,0 +1,69 @@
+﻿body {
+    font-family: 'Comic Sans MS';
+    /*font-size: 35px;*/
+    color: white;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: blue;
+    -webkit-text-fill-color: white;
+    background-color: forestgreen;
+}
+
+.button {
+    background-color: yellow;
+    border-radius: 15%;
+    font-family: 'Comic Sans MS';
+    font-size: 35px;
+    color: white;
+    padding: 12px 2px;
+    width: 195px;
+    margin: 2px;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: blue;
+    -webkit-text-fill-color: white;
+}
+
+#newRound {
+    display: none;
+}
+
+input[type=text] {
+    background-color: lightyellow;
+    outline: none;
+    border: 1px;
+}
+
+form:not(#form1) {
+    display: none;
+}
+
+/*.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: green;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.main {
+    color: yellow;
+    width: 50%;
+    border: 15px solid yellow;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 200px; 
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}*/
