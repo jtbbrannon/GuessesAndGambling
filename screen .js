@@ -152,7 +152,8 @@ function gamble() {
             // Find Correct Guess
             if (answers[i].answer <= correctAnswer)
                 correctGuess = answers[i].answer;
-
+            else
+                correctGuess = "lower";
             // Set ror for answer
             answers[i].ror = ror;
             //
@@ -184,25 +185,25 @@ function gamble() {
         
 
     }
-    var form = document.getElementById("form2");
-    var pdiv = document.createElement("div");
-    var lowBtn = document.createElement("INPUT");
-    lowBtn.setAttribute("type", "button");
-    lowBtn.setAttribute("value", ror);
-    lowBtn.setAttribute("ror", ror);
-    pdiv.innerHTML = "Pays " + ror + " to 1:";
-    pdiv.appendChild(lowBtn);
-    form.appendChild(pdiv);
+
+    //add lower than all guesses to anwser array
+    var lower = new Object();
+    lower.answer = "lower";
+    lower.ror = ror;
+    answers.unshift(lower);
 
     for (i in answers) {
+        var form = document.createElement("form2");
+        var pdiv = document.createElement("div");
         var btn = document.createElement("INPUT");
         btn.setAttribute("type", "button");
         btn.setAttribute("value", answers[i].answer);
         btn.setAttribute("ror", answers[i].ror);
-        pdiv.innerHTML = "Pays " + answers[i].ror + " to 1:";
+        pdiv.innerHTML += "Pays " + answers[i].ror + " to 1:";
         pdiv.appendChild(btn);
         form.appendChild(pdiv);
     }
+
     airconsole.broadcast({ answers: answers });
 }
 
@@ -214,7 +215,9 @@ function calcGuesses(from, allGuesses) {
     var p = Number(allGuesses.Points);
     var guessesTotal = allGuesses.guessesTotal;
     for (var g = 0; g < guessesTotal.length; g++) {
-        var gV = Number(guessesTotal[g].Value);
+        var gV = guessesTotal[g].Value;
+        if (gV != "lower")
+            gV = Number(guessesTotal[g].Value)
         var gC = Number(guessesTotal[g].Count);
         if (correctGuess == gV) {
             var ror = Number(guessesTotal[g].Ror);

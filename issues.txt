@@ -1,26 +1,28 @@
 GandG Notes:
 
 CSS updates:
+	Screen look:
+		UI overhaul
+
 	Buttons:
 	
 	Textbox:
-	
-	Screen look:
-	
+
 	Round Number should be displayed
+
+	Lower than all guesses- needs to show on one line
 	
 Functionality:
-	Write guesses to screen
-	
-	Lower than all guesses
-		What is the payout? -payout is set to one about highest payout
+	Write guesses and payouts to screen
 
 	New Round Button should not always show
 		Should it only show on "MVP" device
 	
 	Anwsers should only be Number fields
 	Anwser should be cleared
-	
 
-	
 	Max Rounds should be "7"
+
+Possible Functionality Changes:
+	Lower than all guesses
+		Higher Payout?
