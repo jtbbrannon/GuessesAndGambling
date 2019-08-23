@@ -17,9 +17,6 @@ Functionality:
 
 	New Round Button should not always show
 		Should it only show on "MVP" device
-	
-	Anwsers should only be Number fields
-	Anwser should be cleared
 
 	Max Rounds should be "7"
 		Start New game (players points are cleared)

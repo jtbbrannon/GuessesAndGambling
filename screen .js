@@ -152,8 +152,6 @@ function gamble() {
             // Find Correct Guess
             if (answers[i].answer <= correctAnswer)
                 correctGuess = answers[i].answer;
-            else
-                correctGuess = "lower";
             // Set ror for answer
             answers[i].ror = ror;
             //
@@ -182,8 +180,15 @@ function gamble() {
             }
             //
         }
-        
-
+        if (correctGuess == 0){
+            var containZero = false;
+            for (i in answers) {
+                if (answers[i].answer == 0)
+                    containZero = true;
+            }
+            if (containZero == false)
+                correctGuess = "lower";
+        }
     }
 
     //add lower than all guesses to anwser array
@@ -222,7 +227,7 @@ function calcGuesses(from, allGuesses) {
         if (correctGuess == gV) {
             var ror = Number(guessesTotal[g].Ror);
             var aV = gC * ror;
-            p += aV;
+            p += aV + gC;
         }
     }
 

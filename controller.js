@@ -141,9 +141,10 @@ function startGamble(answers) {
         pdiv.appendChild(btn);
         form.appendChild(pdiv);
     }
-    //Hide TextBox
+    //Hide and clear TextBox
     var answer = document.getElementById("answer");
     answer.style.display = "none";
+    answer.value = "";
 
     if (info.firstPlayer == true) {
         var div = document.createElement('DIV');
