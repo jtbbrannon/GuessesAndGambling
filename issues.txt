@@ -22,7 +22,10 @@ Functionality:
 	Anwser should be cleared
 
 	Max Rounds should be "7"
+		Start New game (players points are cleared)
 
 Possible Functionality Changes:
 	Lower than all guesses
 		Higher Payout?
+
+	Keep Score across games
