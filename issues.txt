@@ -14,6 +14,7 @@ CSS updates:
 	
 Functionality:
 	Write guesses and payouts to screen
+		Write to screen what players gambled on
 
 	New Round Button should not always show
 
