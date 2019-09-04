@@ -16,7 +16,6 @@ Functionality:
 	Write guesses and payouts to screen
 
 	New Round Button should not always show
-		Should it only show on "MVP" device
 
 	Max Rounds should be "7"
 		Start New game (players points are cleared)

@@ -50,12 +50,10 @@ function playerAdded(data) {
         var prevCon = document.getElementById("form1");
         prevCon.style.display = "none"; 
 
-        var btn = document.getElementById("newRound");
-        btn.style.display = "inline-block"; 
-        
-
         if (data.firstPlayer == true) {
             info.firstPlayer = true;
+            var btn = document.getElementById("newRound");
+            btn.style.display = "inline-block";
         }
     }
     else {
