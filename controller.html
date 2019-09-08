@@ -5,24 +5,23 @@
     <title></title>
     <script type="text/javascript" src="https://www.airconsole.com/api/airconsole-1.7.0.js"></script>
     <script type="text/javascript" src="controller.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="controller.css" />
 </head>
 <body>
-    <form id="form1">
+    <form id="form1" class="formContainer">
         <div>
-            Player Name:
-            <input type="text" id="playerInfo" />
+            <input type="text" id="playerInfo" placeholder="Player Name" onfocus="this.placeholder=''" onblur="this.placeholder='Player Name'"/>
         </div>
         <input type="button" class="button" id="playerBtn" value="Submit" onclick="send()" />
     </form>
     <input type="button" class="button" id="newRound" value="New Round" onclick="newRound()" />
-    <form id="form2"></form>
-    <form id="form3">
+    <form id="form2" class="formContainer"></form>
+    <form id="form3" class="formContainer">
         <div>
             <p id="question"></p>
         </div>
         <div>
-            <input type="number" id="answer" />
+            <input type="number" id="answer" placeholder="Answer" onfocus="this.placeholder=''" onblur="this.placeholder='Answer'"/>
             <input type="button" value="Submit" id="answerBtn" onclick="submitAnswer()" />
         </div>
     </form>

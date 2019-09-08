@@ -1,0 +1,73 @@
+html {
+  background-color: rgb(0, 0, 0);
+  background: linear-gradient(to top left, rgb(131, 131, 131), rgb(0, 0, 0));
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100vh;
+  margin: 0;
+}
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  input {
+    margin-bottom: 5vh;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    background-color:transparent;
+    outline: none;
+    color: white;
+    caret-color: white;
+    font-size: 1.25em;
+    font-family: 'Cardo', serif;
+  }
+  input[type=text]::placeholder {
+    text-align: center;
+    color: white;
+  }
+  input[type=number]::placeholder {
+    text-align: center;
+    color: white;
+  }
+  input[type=button] {
+    background: rgba(255,255,255,.2);
+    width: 100%;
+    padding: 2vh;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px 4px;
+  }
+  p {
+    font-size: 1.5em;
+    width: 75vw;
+    font-family: 'Cardo', serif;
+  }
+  button {
+    background: rgba(255,255,255,.2);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    color: white;
+  }
+  h1 {
+    position:absolute;
+    top:-1vh;
+    right:8vw;
+  }
+
+  form:not(#form1) {
+    display: none;
+}
+#newRound {
+  display: none;
+}

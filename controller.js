@@ -112,14 +112,15 @@ function startGamble(answers) {
 
     for (i in answers) {
         var pdiv = document.createElement("div");
-        var subBtn = document.createElement("INPUT");
-        var btn = document.createElement("INPUT");
+        var subBtn = document.createElement("BUTTON");
+        var btn = document.createElement("BUTTON");
         var count = document.createElement("INPUT");
 
         subBtn.setAttribute("type", "button");
         subBtn.setAttribute("g", answers[i].answer);
         subBtn.setAttribute("value", "-");
         subBtn.onclick = function () { subGuess(this) };
+        subBtn.innerHTML = "-";
 
         count.setAttribute("type", "number");
         count.setAttribute("value", 0);
@@ -131,6 +132,7 @@ function startGamble(answers) {
         btn.setAttribute("g", answers[i].answer);
         btn.setAttribute("value", "+");
         btn.onclick = function () { addGuess(this) };
+        btn.innerHTML = "+";
 
         count.disabled = true;
         pdiv.innerHTML = "Pays " + answers[i].ror + " to 1: " + answers[i].answer + ":";
