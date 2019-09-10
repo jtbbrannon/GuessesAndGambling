@@ -62,6 +62,8 @@ function playerAdded(data) {
 }
 
 function newRound() {
+    var btn = document.getElementById("newRound");
+    btn.style.display = "none";
     var newRound = true;
     airconsole.message(AirConsole.SCREEN, { newRound: newRound });
 }
@@ -112,6 +114,7 @@ function startGamble(answers) {
 
     for (i in answers) {
         var pdiv = document.createElement("div");
+        var p = document.createElement("P");
         var subBtn = document.createElement("BUTTON");
         var btn = document.createElement("BUTTON");
         var count = document.createElement("INPUT");
@@ -135,7 +138,8 @@ function startGamble(answers) {
         btn.innerHTML = "+";
 
         count.disabled = true;
-        pdiv.innerHTML = "Pays " + answers[i].ror + " to 1: " + answers[i].answer + ":";
+        p.innerHTML = "Pays " + answers[i].ror + " to 1: " + answers[i].answer + ":";
+        pdiv.appendChild(p);
         pdiv.appendChild(subBtn);
         pdiv.appendChild(count);
         pdiv.appendChild(btn);
@@ -143,8 +147,10 @@ function startGamble(answers) {
     }
     //Hide and clear TextBox
     var answer = document.getElementById("answer");
-    answer.style.display = "none";
     answer.value = "";
+    var answerForm = document.getElementById("form3");
+    answerForm.style.display = "none";
+    
 
     if (info.firstPlayer == true) {
         var div = document.createElement('DIV');
@@ -233,5 +239,9 @@ function updatePoints(players) {
         if (players[p].Id == airconsole.device_id) {
             info.Points = players[p].Points;
         }
+    }
+    if (info.firstPlayer == true) {
+        var btn = document.getElementById("newRound");
+        btn.style.display = "inline-block";
     }
 }

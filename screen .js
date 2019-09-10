@@ -56,14 +56,16 @@ function submitPlayer(from, info) {
         playerCount += 1;
 
         // Show message on device screen
-        var form = document.getElementById("form1");
+        var form = document.getElementById("playerInfo");
         var div = document.createElement('DIV');
-        div.innerHTML = "Player " + playerCount + ": " + info.Name;
+        var p = document.createElement('P');
+        p.innerHTML = "Player " + playerCount + ": " + info.Name;
         var input = document.createElement('input');
         input.type = "text"; 
         input.setAttribute("id", "player" + players[playerIndex].Id);
         input.disabled = true;
         input.value = info.Points;
+        div.appendChild(p);
         div.appendChild(input);
         form.appendChild(div);
 
@@ -89,7 +91,7 @@ function newRound() {
     playersAnswered = 0;
     correctGuess = 0;
 
-    var form = document.getElementById("form2");
+    var form = document.getElementById("answerForm");
     var child = form.firstElementChild;
     while (child) {
         form.removeChild(child);
@@ -110,7 +112,7 @@ function getQA() {
     message.question = currentQues;
     airconsole.broadcast({ question: message });
 
-    var ques = document.getElementById("userInfo");
+    var ques = document.getElementById("question");
     ques.innerHTML = currentQues;
 }
 function submitAnswer(from, answer) {
@@ -198,14 +200,11 @@ function gamble() {
     answers.unshift(lower);
 
     for (i in answers) {
-        var form = document.createElement("form2");
+        var form = document.getElementById("answerForm");
         var pdiv = document.createElement("div");
-        var btn = document.createElement("INPUT");
-        btn.setAttribute("type", "button");
-        btn.setAttribute("value", answers[i].answer);
-        btn.setAttribute("ror", answers[i].ror);
-        pdiv.innerHTML += "Pays " + answers[i].ror + " to 1:";
-        pdiv.appendChild(btn);
+        var pEl = document.createElement("p");
+        pEl.innerHTML += "Pays " + answers[i].ror + " to 1: " + answers[i].answer;
+        pdiv.appendChild(pEl);
         form.appendChild(pdiv);
     }
 
@@ -241,7 +240,7 @@ function calcGuesses(from, allGuesses) {
     }
     plText.value = player.Points;
 
-    var ans = document.getElementById("userInfo");
+    var ans = document.getElementById("question");
     var ques = ans.innerHTML;
     if (!ques.includes(correctAnswer)) {
         ques += (" " + correctAnswer);
