@@ -6,11 +6,13 @@ var playerCount = 0;
 // Q&A tracking
 var qa = [];
 var currentQues = null;
+var currentSource = null;
 var correctAnswer = 0;
 var randomQ = 0;
 var answers = new Array();
 var playersAnswered = 0;
 var correctGuess = 0;
+var roundCount = 0;
 //
 
 //
@@ -36,6 +38,17 @@ airconsole.onMessage = function (from, message) {
     }
 };
 
+//Listen for player disconnection
+airconsole.onDisconnect = function (from) {
+    for (p in players) {
+        var player = findObjectByKey(players, 'Id', from);
+        if (player != null && player.Id == from)
+            players.splice(player, 1);
+    }
+    if (playersAnswered != 0)
+        playersAnswered -= 1;
+};
+
 function submitPlayer(from, info) {
     var message = new Object();
     var error = false;
@@ -44,6 +57,8 @@ function submitPlayer(from, info) {
         if (info.Name == players[p].Name)
             error = true;
     }
+    if (players.length >= 7)
+        error = true;
     if (error == false) {
         // Update Player info
         var playerIndex = playerCount;
@@ -84,7 +99,10 @@ function submitPlayer(from, info) {
 }
 
 function newRound() {
+    roundCount += 1;
+
     currentQues = null;
+    currentSource = null;
     correctAnswer = 0;
     randomQ = 0;
     answers = new Array();
@@ -97,7 +115,14 @@ function newRound() {
         form.removeChild(child);
         child = form.firstElementChild;
     }
-    getQA();
+    
+    if (roundCount <= 7){
+        getQA();
+    }
+    else{
+        var ques = document.getElementById("question");
+        ques.innerHTML = "Game Over";
+    }
 }
 
 function getQA() {
@@ -108,12 +133,15 @@ function getQA() {
     randomQ = Math.floor(Math.random() * qa.length); 
     currentQues = qa[randomQ].question;
     correctAnswer = qa[randomQ].answer;
+    currentSource = qa[randomQ].source;
     qa.splice(randomQ, 1);
     message.question = currentQues;
     airconsole.broadcast({ question: message });
 
     var ques = document.getElementById("question");
-    ques.innerHTML = currentQues;
+    
+    var quesText = currentQues + " " + currentSource;
+    ques.innerHTML = quesText;
 }
 function submitAnswer(from, answer) {
     var a = new Object();
@@ -238,6 +266,12 @@ function calcGuesses(from, allGuesses) {
     if (player.Points < 2) {
         player.Points = 2;
     }
+
+    //add Points if player guessed correctly
+    if(player.answer == correctGuess){
+        player.Points += 2;
+    }
+
     plText.value = player.Points;
 
     var ans = document.getElementById("question");

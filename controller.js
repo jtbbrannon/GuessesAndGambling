@@ -13,7 +13,7 @@ function send() {
         airconsole.message(AirConsole.SCREEN, { player: info });
     }
     else {
-        alert("You must enter a Name");
+        alert("You must enter a Name, Stupid...");
     }
 };
 
@@ -57,7 +57,7 @@ function playerAdded(data) {
         }
     }
     else {
-        alert("That name is taken");
+        alert("That name is taken or there are greater than 7 players, Sorry...");
     }
 }
 
@@ -128,6 +128,7 @@ function startGamble(answers) {
         count.setAttribute("type", "number");
         count.setAttribute("value", 0);
         count.setAttribute("name", "guesses");
+        count.setAttribute("class", "guesses");
         count.setAttribute("id", answers[i].answer);
         count.setAttribute("ror", answers[i].ror);
 
