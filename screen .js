@@ -40,13 +40,18 @@ airconsole.onMessage = function (from, message) {
 
 //Listen for player disconnection
 airconsole.onDisconnect = function (from) {
-    for (p in players) {
-        var player = findObjectByKey(players, 'Id', from);
-        if (player != null && player.Id == from)
-            players.splice(player, 1);
+    var player = findObjectByKey(players, 'Id', from);
+    var playerIndex = players.indexOf(player);
+    if (player != null && player.Id == from){
+        players.splice(playerIndex, 1);
+        playerCount -= 1;
+        var form = document.getElementById("playerInfo");
+        var div = document.getElementById(player.Name);
+        form.removeChild(div);
     }
-    if (playersAnswered != 0)
+        if (playersAnswered != 0)
         playersAnswered -= 1;
+    
 };
 
 function submitPlayer(from, info) {
@@ -73,6 +78,7 @@ function submitPlayer(from, info) {
         // Show message on device screen
         var form = document.getElementById("playerInfo");
         var div = document.createElement('DIV');
+        div.setAttribute("id", info.Name);
         var p = document.createElement('P');
         p.innerHTML = "Player " + playerCount + ": " + info.Name;
         var input = document.createElement('input');
