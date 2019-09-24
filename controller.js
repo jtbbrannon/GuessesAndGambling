@@ -10,6 +10,8 @@ function send() {
         info.Name = pI.value;
         info.Points = 2;
         info.Count = 0;
+        var playerPoints = document.getElementById("playerPoints");
+        playerPoints.innerHTML = info.Points;
         airconsole.message(AirConsole.SCREEN, { player: info });
     }
     else {
@@ -184,6 +186,8 @@ function addGuess(guess) {
         if (addGuess) {
             addBox.value = bV += 1;
             info.Points -= 1;
+            var playerPoints = document.getElementById("playerPoints");
+            playerPoints.innerHTML = info.Points;
         }
         else {
             alert("You can only bet on 2 Guesses");
@@ -200,6 +204,8 @@ function subGuess(guess) {
     if (bV !== 0) {
         subBox.value = bV -= 1;
         info.Points += 1;
+        var playerPoints = document.getElementById("playerPoints");
+        playerPoints.innerHTML = info.Points;
     }
     else {
         alert("You have add points to that guess");
@@ -239,6 +245,8 @@ function updatePoints(players) {
     for (var p = 0; p < players.length; p++) {
         if (players[p].Id == airconsole.device_id) {
             info.Points = players[p].Points;
+            var playerPoints = document.getElementById("playerPoints");
+            playerPoints.innerHTML = info.Points;
         }
     }
     if (info.firstPlayer == true) {

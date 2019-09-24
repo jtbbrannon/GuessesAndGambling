@@ -3,6 +3,7 @@ html {
   background: linear-gradient(to top left, rgb(131, 131, 131), rgb(0, 0, 0));
   background-repeat: no-repeat;
   background-attachment:fixed;
+  overflow: hidden; 
 }
 
 body {
@@ -20,7 +21,6 @@ body {
     flex-direction: column;
   }
   input {
-    margin-bottom: 5vh;
     border-right: none;
     border-top: none;
     border-left: none;
@@ -30,6 +30,8 @@ body {
     caret-color: white;
     font-size: 1.25em;
     font-family: 'Cardo', serif;
+    margin: 0.2em;
+    width: 100%;
   }
   input[type=text]::placeholder {
     text-align: center;
@@ -49,8 +51,10 @@ body {
   }
   p {
     font-size: 1.5em;
-    width: 75vw;
     font-family: 'Cardo', serif;
+    margin-left: 1em;
+    margin-top: .2em;
+    margin-bottom: 0.2em;
   }
   button {
     background: rgba(255,255,255,.2);
@@ -58,13 +62,21 @@ body {
     cursor: pointer;
     border-radius: 50%;
     color: white;
+    width: 5%;
   }
   h1 {
-    position:absolute;
+    position:fixed;
     top:-1vh;
     right:8vw;
   }
-
+  div{
+    height: 11.1vh;
+    width: 80vw;
+  }
+  .guesses {
+    width: 85%;
+    margin: 0;
+  }
   form:not(#form1) {
     display: none;
 }
