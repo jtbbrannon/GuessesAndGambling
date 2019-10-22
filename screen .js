@@ -18,6 +18,16 @@ var roundCount = 0;
 //
 var airconsole = new AirConsole();
 //
+var data;
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    data = JSON.parse(this.responseText);
+  }
+};
+xmlhttp.open("GET", "data.json", true);
+xmlhttp.send();
 
 //parse message
 airconsole.onMessage = function (from, message) {
@@ -134,7 +144,7 @@ function newRound() {
 function getQA() {
     var message = new Object();
     if (qa.length == 0) {
-        qa = JSON.parse(window.data);
+        qa = data.data;
     }
     randomQ = Math.floor(Math.random() * qa.length); 
     currentQues = qa[randomQ].question;

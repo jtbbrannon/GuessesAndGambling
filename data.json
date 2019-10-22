@@ -1,1 +1,129 @@
-data = '[{"question": "How many days are in a week?","answer" :  "7", "source": "life"},{"question": "How many hours are in a day?","answer" :  "24", "source": "life"},{"question": "How many minutes are in a hour?","answer" :  "60", "source": "life"},{"question": "How many seconds are in a minute?","answer" :  "60", "source": "life"}]'
+{
+	"data": [
+		{
+			"question": "What has been the average percent return of the standard and poor (S&P) index fund from inception, 1926, till 2018?",
+			"answer": "10%",
+			"source": "Investopedia"
+		},
+		{
+			"question": "What is the average height of a female world-wide in inches?",
+			"answer": "63",
+			"source": "verywellfit.com"
+		},
+		{
+			"question": "How long can the average human survive in days without food?",
+			"answer": "21",
+			"source": "buissnessinsider.com"
+		},
+		{
+			"question": "How many teeth does an adult hippopotamos have, assuming he hasn't lost any yet?",
+			"answer": "36",
+			"source": "quora.com"
+		},
+		{
+			"question": "What year was the film company, Netflix founded?",
+			"answer": "1997",
+			"source": "Wikipedia.org"
+		},
+		{
+			"question": "In dollars, what is the US gdp per capita recorded in 2017?",
+			"answer": "59,531.66",
+			"source": "Worldbank.org"
+		},
+		{
+			"question": "How many countries are there in the world as of 2019?",
+			"answer": "195",
+			"source": "Worldometers.com"
+		},
+		{
+			"question": "How many planets are in our solar system as of 2019?",
+			"answer": "8",
+			"source": "skyandtelescope.com"
+		},
+		{
+			"question": "In the sport of soccer, how many red cards in one game will disqualify a team during the FIFA World Cup?",
+			"answer": "5",
+			"source": "quora.com"
+		},
+		{
+			"question": "What date was the D-Day Invasion?",
+			"answer": "1944",
+			"source": "history"
+		},
+		{
+			"question": "What year was the Constitution enacted?",
+			"answer": "1787",
+			"source": "US Constitution Center?"
+		},
+		{
+			"question": "How much in USD did Avengers Endgame make in its opening weekend (Domestic)?",
+			"answer": "357,115,007",
+			"source": "box office mojo"
+		},
+		{
+			"question": "On average how many minutes does sex last for heterosexual couples?",
+			"answer": "19",
+			"source": "https://www.thrillist.com/news/nation/how-long-does-sex-last-on-average"
+		},
+		{
+			"question": "In 2018, how many eggs did the average american eat for the year?",
+			"answer": "278.8",
+			"source": "https://www.statista.com/statistics/183678/per-capita-consumption-of-eggs-in-the-us-since-2000/"
+		},
+		{
+			"question": "What percentage of Youtube users are male?",
+			"answer": "62",
+			"source": "https://www.omnicoreagency.com/youtube-statistics/"
+		},
+		{
+			"question": "What percentage of Youtube users are from outside America?",
+			"answer": "80",
+			"source": "https://www.omnicoreagency.com/youtube-statistics/"
+		},
+		{
+			"question": "As of March 2018 how long in miles was the farthest flight completed?",
+			"answer": "9,032",
+			"source": "Forbes"
+		},
+		{
+			"question": "How many bones are in the human body?",
+			"answer": "206",
+			"source": "Wikipedia"
+		},
+		{
+			"question": "On Average, how many hours does a dog sleep a night?",
+			"answer": "14",
+			"source": "Sleep.Org"
+		},
+		{
+			"question": "As of Feb. 2019 how many NFL teams have not won a Superbowl?",
+			"answer": "12",
+			"source": "Sports Illustrated"
+		},
+		{
+			"question": "As of 2015 what percentage of Americans have never been abroad?",
+			"answer": "29",
+			"source": "NY Daily news"
+		},
+		{
+			"question": "In 2017 how many pounds of red meat and poultry did the average consumer eat in America?",
+			"answer": "216.9",
+			"source": "GlobalAgriculture.org"
+		},
+		{
+			"question": "In 2018, On average how many times does the average American check their phone each day?",
+			"answer": "52",
+			"source": "Variety.com"
+		},
+		{
+			"question": "In inches, how tall was Abraham Lincoln?",
+			"answer": "76",
+			"source": "History"
+		},
+		{
+			"question": "When typing how many words per minute can the average american type?",
+			"answer": "39",
+			"source": "Livechatinc.com"
+		}
+	]
+}
